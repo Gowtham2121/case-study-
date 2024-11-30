@@ -1,0 +1,31 @@
+<!-- templates/services/submit_request.html -->
+<!DOCTYPE html>
+<html lang="en"> <!-- Added the lang attribute here -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Requests</title>
+</head>
+<body>
+    <h1>Track Your Service Requests</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Service Type</th>
+                <th>Request Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in service_requests %}
+            <tr>
+                <td>{{ request.customer.name }}</td>
+                <td>{{ request.service_type }}</td>
+                <td>{{ request.request_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
